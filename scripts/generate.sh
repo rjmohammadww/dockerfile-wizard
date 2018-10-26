@@ -4,6 +4,12 @@ echo "FROM linuxbrew/linuxbrew"
 
 echo "RUN sudo apt-get update"
 
+echo "RUN brew install imagemagick"
+echo "RUN brew install librsvg"
+echo "RUN bundle install"
+echo "RUN curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf"
+echo "RUN bundle exec pod update --verbose"
+echo "RUN brew install swiftlint"
 
 
 if [ ! -e $RUBY_VERSION_NUM ] ; then
@@ -134,10 +140,3 @@ RUN apt-get -y install libgconf-2-4 \
   && mv chromedriver /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver"
 fi
-
-echo "RUN brew install imagemagick"
-echo "RUN brew install librsvg"
-echo "RUN bundle install"
-echo "RUN curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf"
-echo "RUN bundle exec pod update --verbose"
-echo "RUN brew install swiftlint"
