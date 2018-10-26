@@ -13,9 +13,9 @@ image_config: &image_config
   # make sure you also add the values of your IMAGE_NAME & IMAGE_TAG variables
   # to the `test_image` job (line 55)
 
-  LINUX_VERSION: UBUNTU_XENIAL
+  LINUX_VERSION: linuxbrew
 
-  RUBY_VERSION_NUM: 2.4.0
+  RUBY_VERSION_NUM: linuxbrew
 
   # NODE_VERSION_NUM: # pick a version from https://nodejs.org/dist
 
