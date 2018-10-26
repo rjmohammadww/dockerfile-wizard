@@ -7,7 +7,7 @@ echo "RUN sudo apt-get update"
 
 
 if [ ! -e $RUBY_VERSION_NUM ] ; then
-    echo "RUN apt-get install -y libssl-dev && wget http://ftp.ruby-lang.org/pub/ruby/$(awk -F'.' '{ print $1"."$2 }' <<< $RUBY_VERSION_NUM)/ruby-$RUBY_VERSION_NUM.tar.gz && \
+    echo "RUN sudo apt-get install -y libssl-dev && wget http://ftp.ruby-lang.org/pub/ruby/$(awk -F'.' '{ print $1"."$2 }' <<< $RUBY_VERSION_NUM)/ruby-$RUBY_VERSION_NUM.tar.gz && \
     tar -xzvf ruby-$RUBY_VERSION_NUM.tar.gz && \
     cd ruby-$RUBY_VERSION_NUM/ && \
     ./configure && \
@@ -98,7 +98,7 @@ echo "RUN perl -MCPAN -e 'install TAP::Parser'"
 echo "RUN perl -MCPAN -e 'install XML::Generator'"
 
 # install lsb-release, etc., for testing linux distro
-echo "RUN apt-get update && apt-get -y install lsb-release unzip"
+echo "RUN sudo apt-get update && apt-get -y install lsb-release unzip"
 
 if [ $BROWSERS = "true" ] ; then
 cat << EOF
