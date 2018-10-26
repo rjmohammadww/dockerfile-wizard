@@ -2,10 +2,8 @@
 
 echo "FROM linuxbrew/linuxbrew"
 
-echo "RUN apt-get update"
+echo "RUN sudo apt-get update"
 
-echo "RUN apt-get install build-essential curl file git"
-echo "RUN apt-get install build-essential curl file git"
 
 
 if [ ! -e $RUBY_VERSION_NUM ] ; then
