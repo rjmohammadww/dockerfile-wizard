@@ -23,7 +23,7 @@ WORKDIR "SwiftLint"
 # RUN git reset --hard "${SWIFTLINT_REVISION}"
 RUN git submodule update --init --recursive; sudo make install
 RUN cd ../
-RUN sudo rm -rf SwiftLint
+RUN sudo rm -rf SwiftLint 
 
 
 RUN swiftlint version
@@ -38,7 +38,8 @@ RUN bundle install
 RUN brew install imagemagick
 RUN brew install librsvg
 
-ENV LINT_WORK_DIR "./sw"
+RUN sudo rm -rf ruby-2.4.0.tar.gz
+ENV WORK_DIR "./ww"
 
-VOLUME "${LINT_WORK_DIR}"
-WORKDIR "${LINT_WORK_DIR}"
+VOLUME "${WORK_DIR}"
+WORKDIR "${WORK_DIR}"
