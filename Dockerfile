@@ -53,5 +53,6 @@ RUN curl https://imagemagick.org/download/ImageMagick.tar.gz -o ImageMagick.tar.
     ./configure
 WORKDIR /home/linuxbrew
 RUN sudo rm -rf ImageMagick-7.0.8-14 ImageMagick.tar.gz ruby-2.4.0.tar.gz
-# RUN sudo rm -rf ruby-2.4.0.tar.gz
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 RUN swift --version
