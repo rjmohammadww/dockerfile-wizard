@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+after_success:
+  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - docker build -t $DOCKER_USER/test_ci:ww_test_ci .
+  - docker push $DOCKER_USER/test_ci:ww_test_ci
