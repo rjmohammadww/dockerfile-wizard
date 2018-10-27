@@ -2,34 +2,11 @@ image_config: &image_config
 
   # make sure to set your Docker Hub username & password in CircleCI,
   # either as project-specific environment variables
-  # or as resources in your organization's org-global Context
+  # or as resources in your organization's org-global" Context
 
   IMAGE_NAME: test_ci
 
   IMAGE_TAG: ww_test_ci
-
-  # NOTE: if you're modifying this config.yml file manually
-  # rather than using the included setup script,
-  # make sure you also add the values of your IMAGE_NAME & IMAGE_TAG variables
-  # to the `test_image` job (line 55)
-
-  LINUX_VERSION: linuxbrew
-
-  RUBY_VERSION_NUM: linuxbrew
-
-  # NODE_VERSION_NUM: # pick a version from https://nodejs.org/dist
-
-  # PYTHON_VERSION_NUM: # pick a version from https://python.org/ftp/python
-
-  JAVA: false
-
-  MYSQL_CLIENT: false
-
-  POSTGRES_CLIENT: false
-
-  DOCKERIZE: false
-
-  BROWSERS: false
 
 version: 2
 jobs:
@@ -40,8 +17,6 @@ jobs:
 
     steps:
       - checkout
-
-      - run: bash scripts/generate.sh > Dockerfile
 
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
